@@ -1,0 +1,11 @@
+#2 bilinmeyenli denklem çözümü
+denklem = [[1,2,1],[3,4,2]]
+k=0
+sabit=0
+for i in range(len(denklem)-1,-1,-1):
+  sabit=(-denklem[i][k]/denklem[k][k])
+  for j in range(0,len(denklem)+1):
+    denklem[i][j]=sabit*denklem[k][j]+denklem[i][j]
+  k+=1
+
+print("x =",denklem[0][2]/denklem[0][0]," y =",denklem[1][2]/denklem[1][1])
