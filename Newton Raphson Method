@@ -1,0 +1,25 @@
+def f(x):
+  return(x**2-4*x+3)
+
+def ft(x):
+  return(2*x-4)
+
+x1 = int(input("Baslangic tahmini :"))
+
+if(f(x1)==0):
+  print("Tahmininiz dogru")
+  
+else:
+  i=0
+  xr=0.0
+  hata=0.0
+  sapma=0.1
+  while True:
+   xr=x1-(f(x1)/ft(x1))
+   hata=abs(f(xr))
+   x1=xr
+   print(xr,hata)
+   if(hata<sapma):
+      print("Kok bulundu:",xr,i," . adimda bulundu")
+      break
+   i+=1
