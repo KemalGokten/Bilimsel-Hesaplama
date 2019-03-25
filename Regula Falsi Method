@@ -1,0 +1,19 @@
+def f(x):
+  return(x**2-4*x+3)
+x1 = int(input("Baslangic tahmini :"))
+x2 = int(input("Bitis tahmini: "))
+if(f(x1)*f(x2)==0):
+  print("Tahminlerinizden biri denklemin kokudur")
+elif(f(x1)*f(x2)>0):
+  print("Girdiginiz aralikta tek sayida kok yoktur")
+else:
+  for i in range(100):
+    xr=(f(x1)*x2-f(x2)*x1)/(f(x1)-f(x2))
+    if(f(xr)==0):
+      print("Kok bulundu:",xr,i," . adimda bulundu")
+      break
+    elif(f(xr)*f(x1)<0):
+      x2 = xr
+    else:
+      x1 = xr
+    print(xr)
