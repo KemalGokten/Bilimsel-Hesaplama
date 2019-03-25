@@ -7,8 +7,12 @@ if(f(x1)*f(x2)==0):
 elif(f(x1)*f(x2)>0):
   print("Girdiginiz aralikta tek sayida kok yoktur")
 else:
-  for i in range(100):
+  i=0
+  hata=0.0
+  sapma=0.1
+  while True:
     xr=(f(x1)*x2-f(x2)*x1)/(f(x1)-f(x2))
+    hata=abs(f(xr))
     if(f(xr)==0):
       print("Kok bulundu:",xr,i," . adimda bulundu")
       break
@@ -17,3 +21,7 @@ else:
     else:
       x1 = xr
     print(xr)
+    if(hata<sapma):
+      print("Kok bulundu:",xr,i," . adimda bulundu")
+      break
+    i+=1
