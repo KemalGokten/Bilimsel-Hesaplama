@@ -1,3 +1,4 @@
+
 def f(x):
   return(x**2-4*x+3)
 x1 = int(input("Baslangic tahmini :"))
@@ -7,8 +8,12 @@ if(f(x1)*f(x2)==0):
 elif(f(x1)*f(x2)>0):
   print("Girdiginiz aralikta tek sayida kok yoktur")
 else:
-  for i in range(100):
+  i=0
+  hata=0.0
+  sapma=0.1
+  while True:
     xr=(x1+x2)/2
+    hata=abs(f(xr))
     if(f(xr)==0):
       print("Kok bulundu:",xr,i," . adimda bulundu")
       break
@@ -16,4 +21,8 @@ else:
       x2 = xr
     else:
       x1 = xr
-    print(xr)
+    if(hata<sapma):
+      print("Kok bulundu:",xr,i," . adimda bulundu")
+      break
+    print("xr degeri:",xr," hata degeri",hata)
+    i+=1
