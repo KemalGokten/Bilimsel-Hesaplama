@@ -1,3 +1,7 @@
+#Bisection ve Regula falsi yöntemlerinde 2,42 değerleri Newton Raphson yönteminde 42 alındığında 
+#En az Adımda kök bulan yöntemlerin sırası: Newton-Bisection-Regula
+
+
 def f(x):
   return(x**2-4*x+3)
 x1 = int(input("Baslangic tahmini :"))
